@@ -1,0 +1,296 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url('./assets/rsz_1otherbglight.jpg');
+  background-size: cover;       /* makes it fill the screen */
+  background-position: center;  /* centers the image */
+  background-repeat: no-repeat; /* avoids tiling */
+  background-attachment: fixed; /* optional, keeps image in place when scrolling */
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 320px;
+  min-height: 100vh;
+  transition: background-image 0.5s ease, color 0.5s ease;
+  padding-bottom: 80px;
+  width: 100%;
+}
+
+.dark-mode {
+  background-image: url('./assets/otherBG-pica.jpg');
+  background-size: cover;       /* makes it fill the screen */
+  transition: background-image 0.5s ease, color 0.5s ease;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 75vh; /* takes full height of the viewport */
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Dark/Light Mode Containers */
+.dark-mode {
+  background-color: #242424;
+  color: #fff;
+}
+.light-mode {
+  background-color: #A8D5BA;
+  color: #333;
+}
+
+
+
+/* Button styles */
+button {
+  border-radius: 8px;
+  border: none;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.25s ease, color 0.3s ease;
+  margin-right: 10px;
+}
+button:hover {
+  background-color: gray;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+.light-mode .dark-mode-toggle {
+  background-color: #ffffff;
+  color: #242424;
+  border: 1px solid #ccc;
+}
+.dark-mode .dark-mode-toggle {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #666;
+}
+
+/* Actions */
+.actions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Pet List */
+.pet-list {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 16px;
+}
+.pet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 16px;
+}
+.pet-card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  text-align: left;
+}
+.pet-card:hover {
+  transform: translateY(-5px);
+}
+.pet-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: black;
+  z-index: 1000;
+
+
+}
+.pet-card p {
+  margin: 0.3rem 0;
+  color: black;
+  z-index: 1000;
+}
+
+.dark-mode .pet-grid {
+  background-color: #333333;
+}
+ 
+.dark-mode .pet-card {
+  background-color: #BFEFFF;
+  box-shadow: rgba(0, 0, 0, 0.6);
+
+}
+
+/* Adopt Button */
+.adopt-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #5cdb95;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.adopt-btn:hover {
+  background-color: #379683;
+}
+.dark-mode .adopt-btn {
+  background-color: #3c9c86;
+  color: #fff;
+}
+
+/* Form */
+.form-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+form label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+form button {
+  margin-top: 1rem;
+  padding: 0.7rem 1.2rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Nav Links */
+.top-nav {
+  position: fixed;
+  top: 20px;
+  margin-left: 180px;
+  display: flex;
+  gap: 1rem;
+  z-index: 1000;
+}
+
+.signOutBtn {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.top-nav a,
+.signOutBtn {
+  text-decoration: none;
+  color: #333;
+  background-color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.top-nav a:hover,
+.signOutBtn:hover {
+  background-color: #f0f0f0;
+}
+
+.dark-mode .top-nav a,
+.dark-mode .signOutBtn {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+.dark-mode .top-nav a:hover,
+.dark-mode .signOutBtn:hover {
+  background-color: #444;
+}
+
+
+/* Responsive */
+@media (min-width: 768px) {
+  :root {
+    font-size: 18px;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+  button {
+    font-size: 1.1rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    font-size: 20px;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .pet-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
